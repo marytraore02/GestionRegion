@@ -1,0 +1,234 @@
+<section>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Code</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Domaine</th>
+        <th scope="col">Superficie</th>
+        <th scope="col">Langue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let region of regions">
+        <td>{{region.idRegion}}</td>
+        <td>{{region.codeRegion}}</td>
+        <td>{{region.nomRegion}}</td>
+        <td>{{region.domaineActiviteRegion}}</td>
+        <td>{{region.superficie}}</td>
+        <td>{{region.langueMajoritaire}}</td>
+        <!-- [routerLink]="['/detail', region.idRegion]" -->
+        <td><button class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}"><i class="far fa-eye"></i> Voir</button></td>
+        <td><button class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}"><i class="far fa-edit"></i> Edit</button></td>
+        <td><button class="btn btn-outline-danger" (click)="borrar(region.idRegion)"><i class="far fa-trash-alt"></i> Supprimer</button></td>
+        <!-- <td><button class="btn btn-outline-primary" routerLink="/detalle/{{region.id}}"><i class="far fa-eye"></i> Ver</button></td>
+        <td><button class="btn btn-outline-warning" routerLink="/editar/{{regionid}}"><i class="far fa-edit"></i> Editar</button></td>
+        <td><button class="btn btn-outline-danger" (click)="borrar(region.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+  
+
+</section>
+
+
+
+<!-- packages section starts  -->
+
+<section class="packages" id="packages">
+
+        <div class="head-region">
+            <h1 class="heading"> Les <span>regions</span> </h1>
+            <a href="/new" *ngIf="showAdminBoard" class="btn" id="ajouter">Ajouter</a>
+        </div>
+    
+    <div class="box-container" *ngFor="let region of regions">
+
+    <div class="box" data-aos="fade-up">
+        <div class="image">
+            <img src="{{region.imageRegion}}" alt="">
+            <h3> <i class="fas fa-map-marker-alt"></i> {{region.nomRegion}} </h3>
+        </div>
+        <div class="content">
+            <div class="price"> Region de {{region.nomRegion}} </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+            <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+      <div class="box" data-aos="fade-up">
+          <div class="image">
+              <img src="assets/images/kayes.jpeg" alt="">
+              <h3> <i class="fas fa-map-marker-alt"></i> {{region.nomRegion}} </h3>
+          </div>
+          <div class="content">
+              <div class="price"> Region de {{region.nomRegion}}</div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+              <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
+      </div>
+
+      <!-- 
+      <div class="box" data-aos="fade-up">
+          <div class="image">
+              <img src="assets/images/p-2.jpg" alt="">
+              <h3> <i class="fas fa-map-marker-alt"></i> {{region.nomRegion}} </h3>
+          </div>
+          <div class="content">
+              <div class="price"> Region de {{region.nomRegion}} </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+              <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+          <div class="image">
+              <img src="assets/images/p-3.jpg" alt="">
+              <h3> <i class="fas fa-map-marker-alt"></i> {{region.nomRegion}} </h3>
+          </div>
+          <div class="content">
+              <div class="price"> Region de sikasso </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+              <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+          <div class="image">
+              <img src="assets/images/p-4.jpg" alt="">
+              <h3> <i class="fas fa-map-marker-alt"></i> Segou </h3>
+          </div>
+          <div class="content">
+              <div class="price"> Region de segou </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+              <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+          <div class="image">
+              <img src="assets/images/p-5.jpg" alt="">
+              <h3> <i class="fas fa-map-marker-alt"></i> Mopti </h3>
+          </div>
+          <div class="content">
+              <div class="price"> Region de Mopti </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+              <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+          <div class="image">
+              <img src="assets/images/p-6.jpg" alt="">
+              <h3> <i class="fas fa-map-marker-alt"></i> Tombouctou </h3>
+          </div>
+          <div class="content">
+              <div class="price"> Region de tombouctou </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+              <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <div class="image">
+            <img src="assets/images/p-6.jpg" alt="">
+            <h3> <i class="fas fa-map-marker-alt"></i> Gao </h3>
+        </div>
+        <div class="content">
+            <div class="price"> Region de Gao </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+            <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+        <div class="image">
+            <img src="assets/images/p-6.jpg" alt="">
+            <h3> <i class="fas fa-map-marker-alt"></i> Kidal </h3>
+        </div>
+        <div class="content">
+            <div class="price"> Region de Kidal </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+            <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+        <div class="image">
+            <img src="assets/images/p-6.jpg" alt="">
+            <h3> <i class="fas fa-map-marker-alt"></i> Taoudénit </h3>
+        </div>
+        <div class="content">
+            <div class="price"> Region de taoudénit </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+            <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+        <div class="image">
+            <img src="assets/images/p-6.jpg" alt="">
+            <h3> <i class="fas fa-map-marker-alt"></i> Menaka </h3>
+        </div>
+        <div class="content">
+            <div class="price"> Region de menaka </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+            <div class="lesiconscrud">
+                <a href="#" id="btn-1" class="btn btn-outline-primary" routerLink="/detail/{{region.idRegion}}" title="Details"><i class="far fa-eye"></i></a>
+                <a href="#" id="btn-2" class="btn btn-outline-warning" routerLink="/edit/{{region.idRegion}}" title="Modifier"><i class="far fa-edit"></i></a>
+                <a href="#" id="btn-3" class="btn btn-outline-danger" (click)="borrar(region.idRegion)" title="Supprimer la region"><i class="far fa-trash-alt"></i></a>
+            </div>
+        </div> 
+    </div>-->
+
+  </div>
+
+
+  <div class="listvide" *ngIf="regions.length==0">
+    <label>Aucune region dans la base de donnee</label>
+    </div>
+
+</section>
+
+<!-- packages section ends -->

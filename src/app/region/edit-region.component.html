@@ -1,0 +1,127 @@
+<!-- <div class="container" *ngIf="region">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="code">Code region</label>
+                    <input type="text" class="form-control" id="code" name="code"
+                    [(ngModel)]="region.codeRegion" required>
+                </div>
+                <div class="form-group">
+                    <label for="nom">Nom region</label>
+                    <input type="text" class="form-control" id="nom" name="nom"
+                    [(ngModel)]="region.nomRegion" required>
+                </div>
+                <div class="form-group">
+                    <label for="domaine">Domaine activiter region</label>
+                    <input type="text" class="form-control" id="domaine" name="domaine"
+                    [(ngModel)]="region.domaineActiviteRegion" required>
+                </div>
+                <div class="form-group">
+                    <label for="superficie">Superficie region</label>
+                    <input type="text" class="form-control" id="superficie" name="superficie"
+                    [(ngModel)]="region.superficie" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="langue">Langue region</label>
+                    <input type="text" class="form-control" id="langue" name="langue"
+                    [(ngModel)]="region.langueMajoritaire" required>
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Update</button>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- <section class="pricing" id="pricing" *ngIf="region">
+
+    <h1 class="heading"> Edit <span>de la region</span> </h1>
+    <div class="col-md-8 mx-auto">
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <div class="box-container">
+  
+            <div class="box" data-aos="zoom-in-up">
+                <h3> ID: {{region.idRegion}} </h3>
+                <div class="price">
+                    <label for="code">Code region</label>
+                    <input type="text" class="form-control" id="code" name="code"
+                        [(ngModel)]="region.codeRegion" required>
+                </div>
+                <ul>
+                    <li> 
+                        <label for="nom">Nom region</label>
+                        <input type="text" class="form-control" id="nom" name="nom"
+                        [(ngModel)]="region.nomRegion" required>
+                    </li>
+                    <li>
+                        <label for="domaine">Domaine activiter region</label>
+                        <input type="text" class="form-control" id="domaine" name="domaine"
+                        [(ngModel)]="region.domaineActiviteRegion" required>
+                    </li>
+                    <li>
+                        <label for="superficie">Superficie region</label>
+                        <input type="text" class="form-control" id="superficie" name="superficie"
+                        [(ngModel)]="region.superficie" required>
+                    </li>
+                    <li>
+                        <label for="langue">Langue region</label>
+                        <input type="text" class="form-control" id="langue" name="langue"
+                        [(ngModel)]="region.langueMajoritaire" required>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Update</button>
+            </div>
+      
+        </div>
+      
+    </form>
+  </div>
+    
+  </section> -->
+
+  <section class="pricing" id="pricing">
+
+    <h1 class="heading"> Edit <span>de la region</span> </h1>
+    <div class="col-md-8 mx-auto">
+    <div class="box-container"  *ngIf="region">
+  
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <div class="box" data-aos="zoom-in-up">
+            <h3> ID: {{region.idRegion}} </h3>
+        
+            <ul>
+                <li>
+                    <label for="code">Code region</label>
+                    <input type="text" class="form-control" id="code" name="code"
+                        [(ngModel)]="region.codeRegion" required>
+                </li>
+                <li> 
+                    <label for="nom">Nom region</label>
+                    <input type="text" class="form-control" id="nom" name="nom"
+                    [(ngModel)]="region.nomRegion" required>
+                </li>
+                <li>
+                    <label for="domaine">Domaine activiter region</label>
+                    <input type="text" class="form-control" id="domaine" name="domaine"
+                    [(ngModel)]="region.domaineActiviteRegion" required>
+                </li>
+                <li>
+                    <label for="superficie">Superficie region</label>
+                    <input type="text" class="form-control" id="superficie" name="superficie"
+                    [(ngModel)]="region.superficie" required>
+                </li>
+                <li>
+                    <label for="langue">Langue region</label>
+                    <input type="text" class="form-control" id="langue" name="langue"
+                    [(ngModel)]="region.langueMajoritaire" required>
+                </li>
+            </ul>
+            <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Update</button>
+        </div>
+        </form>
+    </div>
+  </div>
+  
+  </section>

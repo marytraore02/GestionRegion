@@ -1,0 +1,40 @@
+
+<div class="log">
+
+    <section class="form-container" data-aos="zoom-in">
+        <div class="row mt-5">
+            <div class="col-md-4 mx-auto">
+                <h1 class="heading"> <span>Register</span> </h1>
+
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm" action="">
+            
+    
+            <div class="inputBox">
+                <span for="username">Username</span>
+                <input type="text" placeholder="username" id="username" name="username" required>
+            </div>
+    
+            <div class="inputBox">
+                <span for="email">Email</span>
+                <input type="text" placeholder="Email" class="form-control" id="email" name="nom" required>
+            </div>
+            <div class="inputBox">
+                <span for="password">Password</span>
+                <input type="password" placeholder="Password" class="form-control"  id="password" name="password" required>
+            </div>
+
+            <div class="register">
+                <h2>Se connecter <a href="/login">login</a> </h2>
+            </div>
+
+        </form>
+        <input type="submit" value="Creer un compte" class="btn" [disabled]="!f.valid">
+        <!-- <button class="btn" [disabled]="!f.valid">Creer</button> -->
+    
+    
+        </div>
+    </div>
+    
+    </section>
+
+</div>

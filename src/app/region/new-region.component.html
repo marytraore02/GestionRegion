@@ -1,0 +1,56 @@
+
+
+<section class="form-container" data-aos="zoom-in">
+    <div class="row mt-5">
+        <div class="col-md-8 mx-auto">
+            <div class="titre">
+                <h1>Nouvelle region</h1>
+            </div>
+    <form (ngSubmit)="onCreate()" novalidate #f="ngForm" action="">
+        
+
+        <div class="inputBox">
+            <span for="code">Code *</span>
+            <input type="text" placeholder="code de la region" id="code" name="code"
+            [(ngModel)]="codeRegion" required>
+        </div>
+
+        <div class="inputBox">
+            <span for="nom">Nom *</span>
+            <input type="text" class="form-control" id="nom" name="nom"
+            [(ngModel)]="nomRegion" required>
+        </div>
+        <div class="inputBox">
+            <span for="image">Image *</span>
+            <input type="file" class="form-control" aria-label="file example" id="image" name="image" required>
+            <div class="invalid-feedback">Example invalid form file feedback</div>
+          </div>
+
+        <div class="inputBox">
+            <span for="domaine">Domaine d'activiter *</span>
+            <input type="text" class="form-control" id="domaine" name="domaine"
+                [(ngModel)]="domaineActiviteRegion" required>
+        </div> 
+
+        <div class="inputBox">
+            <span for="superficie">Superficie *</span>
+            <input type="text" class="form-control" id="superficie" name="superficie"
+            [(ngModel)]="superficie" required>
+        </div> 
+
+        <div class="inputBox">
+            <span for="langue">Langue *</span>
+            <input type="text" class="form-control" id="langue" name="langue"
+            [(ngModel)]="langueMajoritaire" required>
+        </div> 
+
+
+    </form>
+    <input type="submit" value="Creer" class="btn" [disabled]="!f.valid">
+    <!-- <button class="btn" [disabled]="!f.valid">Creer</button> -->
+
+
+    </div>
+</div>
+
+</section>
