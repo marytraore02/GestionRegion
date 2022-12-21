@@ -26,6 +26,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SitesComponent } from './sites/sites.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { NouvelRegionComponent } from './newregion/newregion.component';
 
 
 
@@ -45,7 +46,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     ProfileComponent, 
     BoardAdminComponent, 
     BoardModeratorComponent, 
-    BoardUserComponent, DashboardComponent, SitesComponent, GalleryComponent, 
+    BoardUserComponent, DashboardComponent, SitesComponent, GalleryComponent, NouvelRegionComponent, 
   ],
   imports: [
     FormsModule,

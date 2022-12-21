@@ -16,41 +16,43 @@ import { ProfileComponent } from './profile/profile.component';
 import { DetailRegionComponent } from './region/detail-region.component';
 import { EditRegionComponent } from './region/edit-region.component';
 import { NewRegionComponent } from './region/new-region.component';
+import { NouvelRegionComponent } from './newregion/newregion.component';
 import { RegionComponent } from './region/region.component';
 import { RegisterComponent } from './register/register.component';
 import { SitesComponent } from './sites/sites.component';
 
 const routes: Routes = [
-  // {path: '', component: PrincipalComponent,
+
+  // { path: 'home', component: PrincipalComponent,
   //   children: [
-  //     {path: 'accueil', component: IndexComponent},
-  //     {path: 'list', component: RegionComponent},
-  //     {path: 'new', component: NewRegionComponent},
-  //     {path: 'detail/:id', component: DetailRegionComponent},
-  //     {path: 'edit/:id', component: EditRegionComponent},
-  //     {path: '', redirectTo: 'accueil', pathMatch: 'full'}
+  //     // {path: 'accueil', component: IndexComponent},
+  //     // {path: 'list', component: RegionComponent},
+  //     // {path: 'new', component: NewRegionComponent},
+  //     // {path: 'detail/:id', component: DetailRegionComponent},
+  //     // {path: 'edit/:id', component: EditRegionComponent},
+  //     // {path: '', redirectTo: 'accueil', pathMatch: 'full'}
   //   ]
   // },
 
+
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dash', component: BoardAdminComponent },
+  // { path: 'dashboard', component: DashboardComponent },
   { path: 'sites', component: SitesComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'list', component: RegionComponent},
   { path: 'new', component: NewRegionComponent},
-  {path: 'edit/:id', component: EditRegionComponent},
-  {path: 'detail/:id', component: DetailRegionComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'new/region', component: NouvelRegionComponent},
+  { path: 'edit/:id', component: EditRegionComponent},
+  { path: 'detail/:id', component: DetailRegionComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+      
 
-  // {path: 'login', component: LoginComponent},
-  // {path: 'register', component: RegisterComponent},
-  // {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 

@@ -12,6 +12,8 @@ import { RegionService } from '../_services/region.service';
 export class DetailRegionComponent implements OnInit {
 
   region: any;
+  listepays: any;
+
 
   constructor(
     private regionService: RegionService,
@@ -21,6 +23,8 @@ export class DetailRegionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.ListPays();
+
     const id =this.activatedRoute.snapshot.params['id'];
 
     this.regionService.detail(id).subscribe(data => {
@@ -36,6 +40,22 @@ export class DetailRegionComponent implements OnInit {
     );
 
 }
+
+
+
+//Liste de tout les pays
+ListPays(): void {
+  this.regionService.listePays().subscribe(
+    data => {
+      console.log(data);
+      this.listepays = data;
+    },
+    err => {
+      console.log(err);
+    }
+  );
+}
+
 
 retour(): void {
   this.router.navigate(['/list']);

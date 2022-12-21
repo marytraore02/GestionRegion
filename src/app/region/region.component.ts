@@ -37,12 +37,13 @@ export class RegionComponent implements OnInit {
 
       this.username = user.username;
     }
-    
+
   }
 
   listeRegion(): void {
     this.regionService.liste().subscribe(
       data => {
+        console.log(data);
         this.regions = data;
       },
       err => {
@@ -51,20 +52,6 @@ export class RegionComponent implements OnInit {
     );
   }
 
-  borrar(id: number) {
-    this.regionService.delete(id).subscribe(
-      data => {
-        this.toastr.success('Region supprimer', 'OK', {
-          timeOut: 3000, positionClass: 'toast-top-center'
-        });
-        this.listeRegion(); 
-      },
-      err => {
-        this.toastr.error(err.error.mensaje, 'Connecter-vous à votre compte admin pour effectuer cette action', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
-        });
-      }
-    );
-  }
+
 
 }
