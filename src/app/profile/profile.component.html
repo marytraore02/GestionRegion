@@ -46,7 +46,7 @@
  
      <div class="main-container d-flex">
  
-             <div class="sidebar" id="side_nav">
+             <div class="sidebar" id="side_nav" *ngIf="showAdminBoard">
                 <div class="header-box px-2 pt-3 pb-4">
                  <h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2">Mali</span> <span class="text-white">Tourisme</span> </h1>
                  <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fal fa-stream"></i></button>
@@ -54,8 +54,8 @@
  
                 <ul class="list-unstyled px-2">
                  <li class=""><a href="dash" class="text-decoration-none px-3 py-2 d-block"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                 <li class=""><a href="new" class="text-decoration-none px-3 py-2 d-block"><i class="fal fa-list"></i> Region</a></li>
-                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fas fa-place-of-worship"></i> Pays</a></li>
+                 <li class=""><a href="new" class="text-decoration-none px-3 py-2 d-block"><i class="fas fa-place-of-worship"></i> Region</a></li>
+                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fas fa-flag-checkered"></i> Pays</a></li>
                  <li class=""><a href="dash" class="text-decoration-none px-3 py-2 d-block d-flex justify-content-between">
                      <span><i class="fal fa-comment"></i> Message</span>
                      <span class="bg-dark rounded-pill text-white py-0 px-2">02</span>
@@ -77,12 +77,12 @@
              <div class="content">
                  <div class="right">
  
-                     <div class="toggle-nav">
+                     <div class="toggle-nav" *ngIf="showAdminBoard">
                          <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
                        </div>
  
                        
-                     <div class="head">
+                     <div class="head" *ngIf="showAdminBoard">
                          
                          <div class="row">
                              <div class="col-lg-12">
@@ -394,7 +394,7 @@
               </h6>
             </div>
             <div class="col-lg-4 col-sm-4 follow-info">
-              <h2>Bienvenu sur ton profil.</h2>
+              <h1 style="padding-bottom: 15px;">Bienvenu sur ton profil.</h1>
               <strong>Email:</strong>
                   {{ currentUser.email }}
               <p>@jenifersmith</p>
@@ -405,29 +405,56 @@
                                 <span><i class="icon_pin_alt"></i>NY</span>
                             </h6>
             </div>
-            <div class="col-lg-2 col-sm-6 follow-info weather-category">
+            <div class="col-lg-2 col-sm-6 follow-info weather-category" *ngIf="showAdminBoard">
               <ul>
                 <li class="active">
 
-                  <i class="fa fa-comments fa-2x"> </i><br> Contrary to popular belief, Lorem Ipsum is not simply
+                  <i class="fas fa-flag-checkered"></i><br> Ajouter des pays.
                 </li>
 
               </ul>
             </div>
-            <div class="col-lg-2 col-sm-6 follow-info weather-category">
+            <div class="col-lg-2 col-sm-6 follow-info weather-category" *ngIf="showUserBoard">
               <ul>
                 <li class="active">
 
-                  <i class="fa fa-bell fa-2x"> </i><br> Contrary to popular belief, Lorem Ipsum is not simply
+                  <i class="fas fa-hiking"></i><br> Explorer le Mali en toute simpliciter derrière vos ecrans.
                 </li>
 
               </ul>
             </div>
-            <div class="col-lg-2 col-sm-6 follow-info weather-category">
+            <div class="col-lg-2 col-sm-6 follow-info weather-category" *ngIf="showAdminBoard">
               <ul>
                 <li class="active">
 
-                  <i class="fa fa-tachometer fa-2x"> </i><br> Contrary to popular belief, Lorem Ipsum is not simply
+                  <i class="fas fa-place-of-worship"></i><br> Ajouter des regions
+                </li>
+
+              </ul>
+            </div>
+            <div class="col-lg-2 col-sm-6 follow-info weather-category" *ngIf="showUserBoard">
+              <ul>
+                <li class="active">
+
+                  <i class="fas fa-place-of-worship"></i><br>Visitez en toute tranquiliter toute les regions du Mali.
+                </li>
+
+              </ul>
+            </div>
+            <div class="col-lg-2 col-sm-6 follow-info weather-category" *ngIf="showAdminBoard">
+              <ul>
+                <li class="active">
+
+                  <i class="fas fa-tasks"></i><br> Gerer tous que les utilisateurs peuvent voir.
+                </li>
+
+              </ul>
+            </div>
+            <div class="col-lg-2 col-sm-6 follow-info weather-category" *ngIf="showUserBoard">
+              <ul>
+                <li class="active">
+
+                  <i class="fal fa-comment"> </i><br> Commentez et donnez vos avis sur des regions et pays.
                 </li>
 
               </ul>
@@ -452,7 +479,7 @@
                   <!-- profile -->  
                   <div id="profile" class="tab-pane">
                     <section class="panel">
-                      <div class="bio-graph-heading">
+                      <div class="bio-graph-heading" *ngIf="showAdminBoard">
                         <h3>---Citation---</h3>
                         Hello I’m Jenifer Smith, a leading expert in interactive and creative design specializing in the mobile medium. My graduation from Massey University with a Bachelor of Design majoring in visual communication.
                       </div>
@@ -524,6 +551,17 @@
              </div>
      </div>
  
+
+
+<div *ngIf="showUserBoard">
+  <app-footer></app-footer>
+</div>
+     
+
+
+
+
+
      <script>
          $(".sidebar ul li").on('click' , function(){
              $(".sidebar ul li.active").removeClass('active');

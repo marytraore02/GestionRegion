@@ -347,7 +347,7 @@
                             <form novalidate >
                                 
                                 <div class="inputBox">
-                                    <span for="nomPay">Selectionner pays*:</span>
+                                    <span for="nomPay">Selectionner pays *:</span>
                                     <select name="nomPay" id="nomPay" [(ngModel)]="nomPay" class="inputBox" required>
                                         <option *ngFor="let pays of listepays" value="{{pays.nomPays}}">{{pays.nomPays}}</option>
                                     </select>

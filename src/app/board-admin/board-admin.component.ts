@@ -3,6 +3,7 @@ import { NewUser } from '../models/new-user';
 import { Pays } from '../models/pays';
 import { Region } from '../models/region';
 import { RegionService } from '../_services/region.service';
+import { TokenStorageService } from '../_services/token-storage.service';
 import { UserService } from '../_services/user.service';
 
 @Component({
@@ -13,13 +14,34 @@ import { UserService } from '../_services/user.service';
 export class BoardAdminComponent implements OnInit {
   content?: string;
   listepays: any
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  showUserBoard = false;
+  username?: string;
 
-  constructor(private userService: UserService, private regionService: RegionService) { }
+  constructor(private userService: UserService, private regionService: RegionService,private tokenStorageService: TokenStorageService) { }
   regions: Region[] = [];
   pays: Pays[] = [];
   users: NewUser[] = [];
 
   ngOnInit(): void {
+
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.showUserBoard = this.roles.includes('ROLE_USER');
+
+      this.username = user.username;
+    }
+
+
     this.ListPays();
     this.listeRegion();
     this.listeUsers();
@@ -79,6 +101,12 @@ listeUsers(): void {
       console.log(err);
     }
   );
+}
+
+
+logout(): void {
+  this.tokenStorageService.signOut();
+  window.location.reload();
 }
 
 

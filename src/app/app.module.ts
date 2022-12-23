@@ -30,6 +30,7 @@ import { NouvelRegionComponent } from './newregion/newregion.component';
 import { FooterComponent } from './footer/footer.component';
 import { PaysComponent } from './pays/pays.component';
 import { NewpaysComponent } from './newpays/newpays.component';
+import { ProfileuserComponent } from './profile/profileuser.component';
 
 
 
@@ -49,7 +50,7 @@ import { NewpaysComponent } from './newpays/newpays.component';
     ProfileComponent, 
     BoardAdminComponent, 
     BoardModeratorComponent, 
-    BoardUserComponent, DashboardComponent, SitesComponent, GalleryComponent, NouvelRegionComponent, FooterComponent, PaysComponent, NewpaysComponent, 
+    BoardUserComponent, DashboardComponent, SitesComponent, GalleryComponent, NouvelRegionComponent, FooterComponent, PaysComponent, NewpaysComponent, ProfileuserComponent, 
   ],
   imports: [
     FormsModule,

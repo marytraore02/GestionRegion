@@ -233,34 +233,34 @@
           <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
         </li>
         <li class="nav-item">
-            <a href="/list" class="nav-link" routerLink="list">Regions</a>
+            <a href="/list" class="nav-link" routerLink="list"><i class="fas fa-place-of-worship"></i> Regions</a>
           </li>
           <li class="nav-item">
-            <a href="/pays" class="nav-link" routerLink="pays">Pays</a>
+            <a href="/pays" class="nav-link" routerLink="pays"><i class="fas fa-flag-checkered"></i> Pays</a>
           </li>
         <li class="nav-item">
-          <a href="/sites" class="nav-link" routerLink="sites">Sites</a>
+          <a href="/sites" class="nav-link" routerLink="sites"><i class="fas fa-map-marked-alt"></i> Sites</a>
         </li>
         <li class="nav-item">
-          <a href="/gallery" class="nav-link" routerLink="gallery">Gallery</a>
+          <a href="/gallery" class="nav-link" routerLink="gallery"><i class="fas fa-photo-video"></i>  Gallery</a>
         </li>
       </ul>
   
       <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
         <li class="nav-item">
-          <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+          <a href="/register" class="nav-link" routerLink="register"><i class="fas fa-user-plus"></i> Sign Up</a>
         </li>
         <li class="nav-item">
-          <a href="/login" class="nav-link" routerLink="login">Login</a>
+          <a href="/login" class="nav-link" routerLink="login"><i class="fas fa-user" id="login-btn" title="login"></i> Login</a>
         </li>
       </ul>
   
       <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
         <li class="nav-item">
-          <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+          <a href="/profile" class="nav-link" routerLink="profile"><i class="fas fa-user" id="login-btn" title="login"></i> {{ username }}</a>
         </li>
         <li class="nav-item">
-          <a href class="nav-link" (click)="logout()">LogOut</a>
+          <a href class="nav-link" (click)="logout()"><i class="fas fa-sign-out-alt"></i> LogOut</a>
         </li>
       </ul>
     </nav>

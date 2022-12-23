@@ -44,3 +44,7 @@ hr.h-color{
 .head{
     display: flex;
 }
+
+.active i{
+    font-size: 30px;
+}
