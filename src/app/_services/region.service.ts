@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Region } from '../models/region';
 import { Pays } from '../models/pays';
+import { NewUser } from '../models/new-user';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,11 @@ export class RegionService {
   //Recuperer les pays
   listePays(): Observable<Pays[]> {
     return this.http.get<Pays[]>(`${this.env.api}` + `/pays/read`);
+  }
+
+  //Recuperer les pays
+  listeUsers(): Observable<NewUser[]> {
+    return this.http.get<NewUser[]>(`${this.env.api}` + `/user/read`);
   }
   
 

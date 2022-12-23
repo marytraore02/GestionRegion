@@ -3,14 +3,14 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Region } from '../models/region';
 import { RegionService } from '../_services/region.service';
-import { UserService } from '../_services/user.service';
 
 @Component({
-  selector: 'app-board-user',
-  templateUrl: './board-user.component.html',
-  styleUrls: ['./board-user.component.css']
+  selector: 'app-newpays',
+  templateUrl: './newpays.component.html',
+  styleUrls: ['./newpays.component.css']
 })
-export class BoardUserComponent implements OnInit {
+export class NewpaysComponent implements OnInit {
+
   regions: Region[] = [];
 
   codeRegion!: any;
@@ -25,9 +25,9 @@ export class BoardUserComponent implements OnInit {
   nomPay : any;
 
   fichier: any;
+  region: any;
   image: any;
   listepays: any;
-
 
   constructor(
     private regionService: RegionService,
@@ -37,11 +37,9 @@ export class BoardUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.ListPays();
-    this.listeRegion();
   }
 
-
-
+//Liste de tout les pays
   ListPays(): void {
     this.regionService.listePays().subscribe(
       data => {
@@ -55,25 +53,18 @@ export class BoardUserComponent implements OnInit {
   }
   
 
-    //Liste de tout les regions
-    listeRegion(): void {
-      this.regionService.liste().subscribe(
-        data => {
-          console.log(data);
-          this.regions = data;
-        },
-        err => {
-          console.log(err);
-        }
-      );
-    }
 
+  
 
+  //Recuperationn de l'image depuis la formulaire
   recuperationImage(event: any) {
 
     this.image = event.target["files"][0];
     console.log(this.image)
   }
+
+
+
   reg =[{
     "codeRegion": this.codeRegion,
     "nomRegion":this.nomRegion,
@@ -82,6 +73,9 @@ export class BoardUserComponent implements OnInit {
     "superficie":this.superficie,
     "langueMajoritaire":this.langueMajoritaire
   }]
+
+
+  //La creation de la methode de creation
   onCreate(): void {
     console.log(this.reg)
     console.log(this.nomPay)
@@ -93,34 +87,20 @@ export class BoardUserComponent implements OnInit {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         console.log(data);
-        this.router.navigate(['/list']);
+        this.retour();
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000,  positionClass: 'toast-top-center',
         });
-        this.router.navigate(['/list']);
+        this.router.navigate(['/new']);
       }
     );
   }
 
-
-  delete(id: number) {
-    this.regionService.delete(id).subscribe(
-      data => {
-        this.toastr.success('Region supprimer', 'OK', {
-          timeOut: 3000, positionClass: 'toast-top-center'
-        });
-        this.listeRegion(); 
-      },
-      err => {
-        this.toastr.error(err.error.mensaje, 'Connecter-vous à votre compte admin pour effectuer cette action', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
-        });
-      }
-    );
+  //retour sur la page precedente
+  retour(): void {
+    this.router.navigate(['/list']);
   }
-
-
 
 }

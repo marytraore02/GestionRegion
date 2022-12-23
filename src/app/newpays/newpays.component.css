@@ -1,3 +1,10 @@
+.titre{
+    margin-bottom: 1em;    
+}
+/* .form-container{
+    margin-top: 10em;
+} */
+
 body{
     background: #eee;
 }
@@ -43,4 +50,16 @@ hr.h-color{
 
 .head{
     display: flex;
+}
+.btn-new{
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #F79F1F;
+    background-color: #F79F1F;
+    padding: 10px;
+    border-radius:5px;
+    margin-bottom: 10px;
+}
+.btn-new:hover{
+    letter-spacing: 0.6px;
 }

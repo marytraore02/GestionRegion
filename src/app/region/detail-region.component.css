@@ -15,7 +15,7 @@
     box-sizing: border-box;
     outline: none; border:none;
     text-decoration: none;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     transition:all .2s linear;
 }
 
@@ -300,6 +300,13 @@ section{
 
 /*----------------------2222222222-------------------*/
 
+.detail{
+    text-align: start;
+}
+.desc{
+    margin-top: 15px;
+    text-align: start;
+}
 
 .ho {
   padding: 0;
@@ -320,6 +327,41 @@ section{
           justify-content: flex-end;
   padding: 2rem 9%;
 }
+
+.box .carte{
+    height: 400px;
+    width: 100%;
+}
+
+
+.box h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.box input{
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
+}
+.box input:focus{
+    border: 1px solid #000;
+    outline: 0;
+}
+.box textarea{
+   width: 100%;
+   height: 150px;
+   padding: 15px 20px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   border: 1px solid #86b0b6;
+}
+.box textarea:focus{
+    border: 1px solid #000;
+    outline: 0;
+ }
 
 .ho .box.second {
   -webkit-box-pack: start;
@@ -346,8 +388,24 @@ section{
 .ho .box .content p {
   line-height: 2;
   color: #10221b;
-  font-size: 1.5rem;
+  font-size: 1.5rem;    
   padding: 1rem 0;
+}
+table{
+    margin-top: 15px;
+    text-align: start;
+    font-size: 20px;
+}
+table tr{
+    margin-bottom: 25px;
+}
+table tr b{
+    font-weight: 600;
+    padding-right: 50px;
+}
+table tr th{
+    font-weight: none;
+    font-size: 18px;
 }
 /*-----------------222222222222222----------------------------*/
 
@@ -529,9 +587,9 @@ section{
     font-size: 1.5rem;
     line-height: 1.8;
 }
-.pricing{
-    margin-top: 9rem;
-}
+/* .pricing{
+    margin-top: 4rem;
+} */
 
 .pricing .box-container{
     display: grid;

@@ -15,7 +15,7 @@
     box-sizing: border-box;
     outline: none; border:none;
     text-decoration: none;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     transition:all .2s linear;
 }
 
@@ -197,58 +197,7 @@ section{
     padding-left: 2rem;
 }
 
-.header .login-form{
-    position:absolute;
-    top:115%; right:7%;
-    background:var(--bg-color-1);
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    width:35rem;
-    padding: 2rem;
-    transform:scale(0);
-    transform-origin: top right;
-}
 
-.header .login-form.active{
-    transform:scale(1);
-}
-
-.header .login-form .inputBox{
-    margin-bottom: 1rem;
-}
-
-.header .login-form .inputBox span{
-    font-size: 1.7rem;
-    color:var(--text-color-2);
-}
-
-.header .login-form .inputBox input{
-    font-size: 1.5rem;
-    color:var(--text-color-1);
-    border-radius: .5rem;
-    padding:1rem;
-    background:var(--bg-color-2);
-    width: 100%;
-    text-transform: none;
-    margin:.5rem 0;
-}
-
-.header .login-form .remember{
-    display: flex;
-    align-items: center;
-    gap:.5rem;
-    padding:.5rem 0;
-}
-
-.header .login-form .remember label{
-    color:var(--text-color-2);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.header .login-form .btn{
-    width:100%;
-}
 
 .home{
     display: flex;

@@ -27,6 +27,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SitesComponent } from './sites/sites.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { NouvelRegionComponent } from './newregion/newregion.component';
+import { FooterComponent } from './footer/footer.component';
+import { PaysComponent } from './pays/pays.component';
+import { NewpaysComponent } from './newpays/newpays.component';
 
 
 
@@ -46,7 +49,7 @@ import { NouvelRegionComponent } from './newregion/newregion.component';
     ProfileComponent, 
     BoardAdminComponent, 
     BoardModeratorComponent, 
-    BoardUserComponent, DashboardComponent, SitesComponent, GalleryComponent, NouvelRegionComponent, 
+    BoardUserComponent, DashboardComponent, SitesComponent, GalleryComponent, NouvelRegionComponent, FooterComponent, PaysComponent, NewpaysComponent, 
   ],
   imports: [
     FormsModule,

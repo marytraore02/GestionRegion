@@ -20,37 +20,33 @@ import { NouvelRegionComponent } from './newregion/newregion.component';
 import { RegionComponent } from './region/region.component';
 import { RegisterComponent } from './register/register.component';
 import { SitesComponent } from './sites/sites.component';
+import { NewpaysComponent } from './newpays/newpays.component';
 
 const routes: Routes = [
 
-  // { path: 'home', component: PrincipalComponent,
-  //   children: [
-  //     // {path: 'accueil', component: IndexComponent},
-  //     // {path: 'list', component: RegionComponent},
-  //     // {path: 'new', component: NewRegionComponent},
-  //     // {path: 'detail/:id', component: DetailRegionComponent},
-  //     // {path: 'edit/:id', component: EditRegionComponent},
-  //     // {path: '', redirectTo: 'accueil', pathMatch: 'full'}
-  //   ]
-  // },
+  { path: '', component: PrincipalComponent,
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'pays', component: BoardModeratorComponent },
+      // { path: 'dashboard', component: DashboardComponent },
+      { path: 'sites', component: SitesComponent },
+      { path: 'gallery', component: GalleryComponent },
+      { path: 'list', component: RegionComponent},
+      { path: 'edit/:id', component: EditRegionComponent},
+      { path: 'detail/:id', component: DetailRegionComponent},
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+    ]
+  },
 
-
-  { path: 'home', component: HomeComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: BoardModeratorComponent },
+  
+  { path: 'dashboardpays', component: BoardUserComponent },
   { path: 'dash', component: BoardAdminComponent },
-  // { path: 'dashboard', component: DashboardComponent },
-  { path: 'sites', component: SitesComponent },
-  { path: 'gallery', component: GalleryComponent },
-  { path: 'list', component: RegionComponent},
+  { path: 'profile', component: ProfileComponent },
   { path: 'new', component: NewRegionComponent},
   { path: 'new/region', component: NouvelRegionComponent},
-  { path: 'edit/:id', component: EditRegionComponent},
-  { path: 'detail/:id', component: DetailRegionComponent},
+  { path: 'new/pays', component: NewpaysComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
       
 
 ];
